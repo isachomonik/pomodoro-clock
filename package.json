@@ -1,0 +1,19 @@
+{
+  "name": "pomodoro-clock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isachomonik/pomodoro-clock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isachomonik/pomodoro-clock/issues"
+  },
+  "homepage": "https://github.com/isachomonik/pomodoro-clock#readme"
+}

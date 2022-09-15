@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center; 
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#container {
+    background-color: aliceblue;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border: 10px dodgerblue solid;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+   font-size: 80px;
+   font-weight: 900;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 300;
+}

@@ -9,7 +9,7 @@ let seconds = '00';
 
 
 
-window.onload = () => {
+Window.onload = () => {
     document.getElementById('minutes').innerHTML = workTime;
     document.getElementById('seconds').innerHTML = seconds;
 
@@ -86,3 +86,5 @@ function start() {
     window.interval = setInterval(timerFunction, 1000) // 1000 = 1s;
     
 }
+
+module.exports = start(), remTime(), addTime();

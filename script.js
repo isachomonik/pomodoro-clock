@@ -1,6 +1,6 @@
 // variables
 
-let workTime = 25;
+let workTime = 1;
 let breakTime = 5;
 
 let seconds = '00';
@@ -16,6 +16,9 @@ window.onload = () => {
     document.getElementById('start').innerHTML = 'Start'
 
     document.getElementById('reset').style.display = 'none';
+
+    document.getElementById('stateBreak').style.display = 'none';
+
 
 }
 
@@ -62,13 +65,23 @@ function start() {
             if(workMinutes === -1){
                 // start break
 
+                PlaySound = () => {
+                    var audio = new Audio('./Ping.mp3');
+                    audio.loop = false;
+                    audio.play();
+                }
+
                 if(breakCount % 2 == 0) {
+
                 workMinutes = breakMinutes;
                 breakCount++;
             } else {
                 // continue work
+
+
                 workMinutes = workTime;
                 breakCount++;
+                
             }
         }
 

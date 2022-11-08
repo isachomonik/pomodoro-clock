@@ -1,7 +1,7 @@
 // variables
 
 let workTime = 1;
-let breakTime = 5;
+let breakTime = 1;
 
 let seconds = '00';
 
@@ -12,19 +12,29 @@ let seconds = '00';
 window.onload = () => {
     document.getElementById('minutes').innerHTML = workTime;
     document.getElementById('seconds').innerHTML = seconds;
-
+    
     document.getElementById('start').innerHTML = 'Start'
-
+    
     document.getElementById('reset').style.display = 'none';
 
-    document.getElementById('stateBreak').style.display = 'none';
 
-
+    
 }
 
 // star timer
 
 
+function PlaySoundPing() {
+    var audioPing = new Audio('./Ping.mp3');
+    audioPing.loop = false;
+    audioPing.play();
+}
+
+function PlaySoundRing() {
+    var audioRing = new Audio('./boxing_bell.mp3');
+    audioRing.loop = false;
+    audioRing.play();
+}
 
 function remTime(){
     document.getElementById('minutes').innerHTML = workTime--;
@@ -35,10 +45,12 @@ function addTime(){
 
 }
 
+
+
 function start() {
     document.getElementById('start').style.display = 'none';
     document.getElementById('reset').style.display = 'block';
-
+    
     
     //change the timer
     seconds = 5;
@@ -65,22 +77,22 @@ function start() {
             if(workMinutes === -1){
                 // start break
 
-                PlaySound = () => {
-                    var audio = new Audio('./Ping.mp3');
-                    audio.loop = false;
-                    audio.play();
-                }
+
+                PlaySound();
 
                 if(breakCount % 2 == 0) {
 
                 workMinutes = breakMinutes;
                 breakCount++;
+                document.getElementById('state').innerHTML = 'Break time';
+
             } else {
                 // continue work
 
-
+                
                 workMinutes = workTime;
                 breakCount++;
+                document.getElementById('state').innerHTML = 'Work time';
                 
             }
         }

@@ -1,7 +1,7 @@
 // variables
 
-let workTime = 1;
-let breakTime = 1;
+let workTime = 25;
+let breakTime = 5;
 
 let seconds = '00';
 
@@ -55,7 +55,7 @@ function start() {
     
     
     //change the timer
-    seconds = 5;
+    seconds = 59;
 
     let workMinutes = workTime - 1;
     let breakMinutes = breakTime - 1;

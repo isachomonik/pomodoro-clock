@@ -31,18 +31,17 @@ function PlaySoundPing() {
 }
 
 function PlaySoundRing() {
-    var audioRing = new Audio('./boxing_bell.mp3');
+    var audioRing = new Audio('./boxing-bell.mp3');
     audioRing.loop = false;
     audioRing.play();
 }
 
 function remTime(){
-    document.getElementById('minutes').innerHTML = workTime--;
+    document.getElementById('minutes').innerHTML = --workTime;
 }
 
 function addTime(){
-    document.getElementById('minutes').innerHTML = workTime++;
-
+    document.getElementById('minutes').innerHTML = ++workTime;
 }
 
 
@@ -71,33 +70,42 @@ function start() {
         // start
         seconds = seconds - 1;
 
-        if(seconds === 0){
+        if(seconds === -1){
             workMinutes--;
             
+
             if(workMinutes === -1){
                 // start break
 
+                PlaySoundPing();
+                document.getElementById('state').innerHTML = 'Work time';
 
-                PlaySound();
+                if(breakMinutes === -1){
+                    PlaySoundRing();
+
+                }
 
                 if(breakCount % 2 == 0) {
-
                 workMinutes = breakMinutes;
+            
                 breakCount++;
-                document.getElementById('state').innerHTML = 'Break time';
+
+                
 
             } else {
                 // continue work
 
-                
                 workMinutes = workTime;
+                document.getElementById('state').innerHTML = 'Break time';
+
                 breakCount++;
-                document.getElementById('state').innerHTML = 'Work time';
+
+
                 
             }
         }
 
-            seconds = 59;
+            seconds = 5;
         }
 
     }

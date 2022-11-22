@@ -28,12 +28,15 @@ function PlaySoundPing() {
     var audioPing = new Audio('./Ping.mp3');
     audioPing.loop = false;
     audioPing.play();
+    audioPing.volume = 0.2;
 }
 
 function PlaySoundRing() {
     var audioRing = new Audio('./boxing-bell.mp3');
     audioRing.loop = false;
     audioRing.play();
+    audioRing.volume = 0.2;
+
 }
 
 function remTime(){
@@ -77,16 +80,14 @@ function start() {
             if(workMinutes === -1){
                 // start break
 
-                PlaySoundPing();
                 document.getElementById('state').innerHTML = 'Work time';
 
-                if(breakMinutes === -1){
-                    PlaySoundRing();
-
-                }
+            
 
                 if(breakCount % 2 == 0) {
                 workMinutes = breakMinutes;
+                PlaySoundRing();
+
             
                 breakCount++;
 
@@ -94,6 +95,8 @@ function start() {
 
             } else {
                 // continue work
+                PlaySoundPing();
+
 
                 workMinutes = workTime;
                 document.getElementById('state').innerHTML = 'Break time';

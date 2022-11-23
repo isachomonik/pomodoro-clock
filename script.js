@@ -108,7 +108,7 @@ function start() {
             }
         }
 
-            seconds = 5;
+            seconds = 59;
         }
 
     }
